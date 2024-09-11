@@ -1,0 +1,18 @@
+.buttons-col {
+    aspect-ratio: 1 / 1;
+}
+
+.drum-pad {
+    height: 100%;
+    box-shadow: 2px 2px 5px black;
+}
+
+#power-switch, #bank-switch {
+    aspect-ratio: 4 / 1;
+    width: 55%;
+}
+
+#display-row {
+    height: 50px;
+    font-size: 1.1em;
+}

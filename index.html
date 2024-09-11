@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Drum Machine</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- Font Awesome CSS -->
+     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
+     <!-- Custom CSS -->
+      <link rel="stylesheet" href="style.css">
+  </head>
+  <body class="bg-secondary vh-100">
+    
+    <div id="drum-machine" class="container-fluid h-100 d-flex flex-column justify-content-center">
+        <div class="row justify-content-center">
+            <div class="col-8 bg-dark text-light" style="border: 3px solid yellow">
+                <!-- Logo -->
+                 <div class="row border">
+                    <div class="col text-right">
+                        <h3>Drum Machine <i class="fas fa-music    "></i></h3>
+                    </div>
+                 </div>
+
+                <!-- Buttons and Settings -->
+                 <div class="row border py-3">
+                    <!-- buttons column -->
+                    <div id="buttons" class="col m-2 p-0" style="aspect-ratio: 1 / 1;">
+                        <div class="row no-gutters flex-nowrap m-2 buttons-row">
+                            <div class="col buttons-col mr-2 rounded">
+                                <button type="button" class="drum-pad btn btn-block btn-secondary">Q
+                                    <audio id="Q" class="clip">
+                                        <source src="" type="audio/mpeg">
+                                    </audio>
+                                </button>
+                            </div>
+                            <div class="col buttons-col mr-2 rounded">
+                                <button type="button" class="drum-pad btn btn-block btn-secondary">W
+                                    <audio id="W" class="clip">
+                                        <source src="" type="audio/mpeg">
+                                    </audio>
+                                </button>
+                            </div>
+                            <div class="col buttons-col rounded">
+                                <button type="button" class="drum-pad btn btn-block btn-secondary">E
+                                    <audio id="E" class="clip">
+                                        <source src="" type="audio/mpeg">
+                                    </audio>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="row no-gutters flex-nowrap m-2  buttons-row">
+                            <div class="col buttons-col mr-2 rounded">
+                                <button type="button" class="drum-pad btn btn-block btn-secondary">A
+                                    <audio id="A" class="clip">
+                                        <source src="" type="audio/mpeg">
+                                    </audio>
+                                </button>
+                            </div>
+                            <div class="col buttons-col mr-2 rounded">
+                                <button type="button" class="drum-pad btn btn-block btn-secondary">S
+                                    <audio id="S" class="clip" >
+                                        <source src="" type="audio/mpeg">
+                                    </audio>
+                                </button>
+                            </div>
+                            <div class="col buttons-col rounded">
+                                <button type="button" class="drum-pad btn btn-block btn-secondary">D
+                                    <audio id="D" class="clip">
+                                        <source src="" type="audio/mpeg">
+                                    </audio>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="row no-gutters flex-nowrap m-2  buttons-row">
+                            <div class="col buttons-col mr-2 rounded">
+                                <button type="button" class="drum-pad btn btn-block btn-secondary">Z
+                                    <audio id="Z" class="clip">
+                                        <source src="" type="audio/mpeg">
+                                    </audio>
+                                </button>
+                            </div>
+                            <div class="col buttons-col mr-2 rounded">
+                                <button type="button" class="drum-pad btn btn-block btn-secondary">X
+                                    <audio id="X" class="clip">
+                                        <source src="" type="audio/mpeg">
+                                    </audio>
+                                </button>
+                            </div>
+                            <div class="col buttons-col rounded">
+                                <button type="button" class="drum-pad btn btn-block btn-secondary">C
+                                    <audio id="C" class="clip">
+                                        <source src="" type="audio/mpeg">
+                                    </audio>
+                                </button>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <!-- settings column -->
+                    <div id="settings" class="col d-flex flex-column justify-content-between">
+
+                        <!-- Power on/off row -->
+                        <div class="row">
+                            <div class="col">
+                                <!-- Power text -->
+                                <div class="row">
+                                    <div class="col font-weight-bold text-center">
+                                        Power
+                                    </div>
+                                </div>
+                                <!-- Power switch -->
+                                <div class="row">
+                                    <div class="col d-flex align-items-center justify-content-center">
+                                        <div id="power-switch" class="btn-group" role="group" aria-label="">
+                                            <button id="power-off-btn" type="button" class="btn btn-secondary border border-dark" disabled></button>
+                                            <button id="power-on-btn" type="button" class="btn btn-primary border border-dark"></button>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Display row -->
+                        <div id="display-row" class="row justify-content-center">
+                            <div id="display" class="col-10 bg-secondary text-center font-weight-bold d-flex align-items-center justify-content-center border border-primary rounded">
+                                
+                            </div>
+                        </div>
+
+                        <!-- Volume row -->
+                        <div class="row">
+                            <div class="col">
+                                <input type="range" class="form-range d-block w-100" id="volume-range">
+                            </div>
+                        </div>
+
+                        <!-- Bank row -->
+                        <div class="row">
+                            <div class="col">
+                                <!-- Bank text -->
+                                <div class="row">
+                                    <div class="col font-weight-bold text-center">
+                                        Bank
+                                    </div>
+                                </div>
+                                <!-- Bank switch -->
+                                <div class="row">
+                                    <div class="col d-flex align-items-center justify-content-center">
+                                        <div id="bank-switch" class="btn-group" role="group" aria-label="">
+                                            <button id="bank-drum-btn" type="button" class="btn btn-primary border border-dark"></button>
+                                            <button id="bank-chord-btn" type="button" class="btn btn-secondary border border-dark" disabled></button>
+                        
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                 </div>
+            </div>
+        </div>
+    </div>
+
+
+
+      
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
